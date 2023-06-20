@@ -42,7 +42,7 @@
 //   return true
 // }
 
-// challenge 3 frequency counter or multiple point solution 
+// challenge 3 frequency counter or multiple point solution
 
 // function areThereDuplicates(...nums) {
 //   // good luck. (supply any arguments you deem necessary.)
@@ -61,21 +61,40 @@
 
 // 2 pointers solution
 
-function areThereDuplicates(...nums) {
-  // good luck. (supply any arguments you deem necessary.)
-  let freqCheck = {}
-  for (let i = 0; i < nums.length; i++) {
-    let point1 = nums[i]
-    let point2 = nums[i + 1]
-    if (i + 1 <= nums.length) {
-      point1 === point2 ? freqCheck[point1] += 1 : freqCheck[point1] = 1
-    }
-  }
-  console.log(freqCheck)
-}
+// function areThereDuplicates(...nums) {
+//   // good luck. (supply any arguments you deem necessary.)
+//   let freqCheck = {}
+//   for (let i = 0; i < nums.length; i++) {
+//     let point1 = nums[i]
+//     let point2 = nums[i + 1]
+//     if (i + 1 <= nums.length) {
+//       point1 === point2 ? freqCheck[point1] += 1 : freqCheck[point1] = 1
+//     }
+//   }
+//   console.log(freqCheck)
+// }
 
-// test cases
-areThereDuplicates('a', 'b', 'c', 'a')
+// // test cases
+// areThereDuplicates('a', 'b', 'c', 'a')
 // areThereDuplicates(1, 2, 3) // false
 //areThereDuplicates(1, 2, 2) // true
 //areThereDuplicates('a', 'b', 'c', 'a') // true
+
+// productOfArray([1,2,3]) // 6
+
+// function productOfArray(arr) {
+//   if (arr.length == 0) return 1
+
+//   console.log(productOfArray(arr.slice(1)))
+//   return arr[0] * productOfArray(arr.slice(1))
+// }
+// productOfArray([1, 2, 3, 10])
+
+
+// recursion 
+
+function recursiveRange(num) {
+  if (num === 0) return 0
+  return num + recursiveRange(num - 1)
+}
+console.log(recursiveRange(6))
