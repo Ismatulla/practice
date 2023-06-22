@@ -93,8 +93,63 @@
 
 // recursion 
 
-function recursiveRange(num) {
-  if (num === 0) return 0
-  return num + recursiveRange(num - 1)
+// function recursiveRange(num) {
+//   if (num === 0) return 0
+//   return num + recursiveRange(num - 1)
+// }
+// console.log(recursiveRange(6))
+
+
+// const reeversed = (str) => {
+//   if (str.length === 1) return str;
+//   const lastChar = str.slice(-1);
+//   const remainingStr = str.slice(0, -1);
+//   return lastChar + reeversed(remainingStr);
+// }
+// console.log(reeversed('ismatulla'))
+
+// BINARY SEARCH ALGORITHMS
+
+// add whatever parameters you deem necessary - good luck!
+//function binarySearch(arr, value) {
+// add whatever parameters you deem necessary - good luck!
+//   let start = 0;
+//   let end = arr.length - 1;
+//   let middle = Math.floor((start + end) / 2);
+//   while (arr[middle] !== value && start <= end) {
+//     if (value < arr[middle]) {
+//       end = middle - 1
+//     } else {
+//       start = middle + 1
+//     }
+//     middle = Math.floor((start + end) / 2)
+//   }
+//   if (arr[middle] === value) {
+//     return middle
+
+//   }
+//   return -1
+// }
+
+// console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 9))
+
+
+// bubble and selection sort algorithms 
+
+// selectionSort sample 
+function sortArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let start = i
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[start]) {
+        start = j
+      }
+    }
+    let temp = arr[i]
+    arr[i] = arr[start]
+    arr[start] = temp
+  }
+  return arr
 }
-console.log(recursiveRange(6))
+console.log(sortArray([2, 6, 1, 45, 23, 37, 54, 28]))
+// arr[2,6,1,45,23,37,54,28] sort them in ascending order
