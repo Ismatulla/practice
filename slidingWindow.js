@@ -91,7 +91,7 @@
 // productOfArray([1, 2, 3, 10])
 
 
-// recursion 
+// recursion
 
 // function recursiveRange(num) {
 //   if (num === 0) return 0
@@ -134,22 +134,66 @@
 // console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 9))
 
 
-// bubble and selection sort algorithms 
+// bubble and selection sort algorithms
 
-// selectionSort sample 
-function sortArray(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let start = i
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[start]) {
-        start = j
-      }
-    }
-    let temp = arr[i]
-    arr[i] = arr[start]
-    arr[start] = temp
-  }
-  return arr
-}
-console.log(sortArray([2, 6, 1, 45, 23, 37, 54, 28]))
+// // selectionSort sample
+// function sortArray(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     let start = i
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[j] < arr[start]) {
+//         start = j
+//       }
+//     }
+//     let temp = arr[i]
+//     arr[i] = arr[start]
+//     arr[start] = temp
+//   }
+//   return arr
+// }
+// console.log(sortArray([2, 6, 1, 45, 23, 37, 54, 28]))
 // arr[2,6,1,45,23,37,54,28] sort them in ascending order
+
+// INSERTION SORT
+
+// function insertionSort(arr) {
+//   for (var i = 1; i < arr.length; i++) {
+//     let currentVal = arr[i]
+//     for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+//       console.log(j)
+//       arr[j + 1] = arr[j]
+//     }
+//     arr[j + 1] = currentVal
+
+//   }
+
+//   return arr
+// }
+// insertionSort([7, 4, 2, 0, 11, 6])
+
+//  Merging arrays 
+
+function merging(arr1, arr2) {
+  let sorted = [];
+  let i = 0;
+  let j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr2[j] > arr1[i]) {
+      sorted.push(arr1[i])
+      i++
+    } else {
+      sorted.push(arr2[j])
+      j++
+    }
+  }
+  while (i < arr1.length) {
+    sorted.push(arr1[i])
+    i++
+  }
+  while (j < arr2.length) {
+    sorted.push(arr2[j])
+    j++
+  }
+  console.log(sorted)
+}
+merging([1, 2, 6, 19], [45, 34, 76, 13])
