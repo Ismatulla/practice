@@ -194,6 +194,15 @@ function merging(arr1, arr2) {
     sorted.push(arr2[j])
     j++
   }
-  console.log(sorted)
+  return sorted
 }
-merging([1, 2, 6, 19], [45, 34, 76, 13])
+
+const mergeSort = (arr) => {
+  if (arr.length <= 1) return arr
+  let mid = Math.floor(arr.length / 2)
+  let right = mergeSort(arr.slice(0, mid));
+  let left = mergeSort(arr.slice(mid))
+  return merging(left, right);
+}
+console.log(mergeSort([2, 3, 9, 12, 0, 65, 3]))
+// mergeSort([2, 3, 9, 12, 0, 65, 3])
