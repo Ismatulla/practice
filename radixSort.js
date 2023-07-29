@@ -19,6 +19,7 @@ function mostDigits(nums) {
   }
   return maxDigits
 }
+mostDigits([4321, 5431, 654312, 54, 12])
 
 function radixSort(nums) {
   let maxDigitCount = mostDigits(nums); // returns biggest numbers digit
@@ -27,7 +28,6 @@ function radixSort(nums) {
     for (let i = 0; i < nums.length; i++) {
       digitBuckets[getDigit(nums[i], k)].push(nums[i])
     }
-    console.log(digitBuckets)
     nums = [].concat(...digitBuckets)
     console.log(nums)
   }
